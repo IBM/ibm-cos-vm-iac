@@ -1,3 +1,3 @@
 # MAINTAINERS
 
-Christopher Ferris - chrisfer@us.ibm.com
+Harald Seipp - 20093686+hseipp@users.noreply.github.com

@@ -7,10 +7,23 @@
 <!-- Not always needed, but a scope helps the user understand in a short sentance like below, why this repo exists -->
 ## Scope
 
-The purpose of this project is to provide a template for new open source repositories.
+The purpose of this project is to demonstrate how a pure virtual variant of the [IBM Cloud Object Storage System](https://www.ibm.com/support/knowledgecenter/en/STXNRM)
+can be built on top a KVM-based Linux virtualization host.
+
+## Prerequisites
+
+Before running the main build script from within the [source directory](src/) you need to have a Linux console on a system with
+libvirt/KVM installed (tested on Fedora 33).
+You'll need at least the following packages installed
+* bash
+* expect
+* (more to be added)
 
 <!-- A more detailed Usage or detailed explaination of the repository here -->
 ## Usage
+
+**TBD**
+Change to the src directory and run `./build.sh`
 
 This repository contains some example best practices for open source repositories:
 
@@ -31,15 +44,6 @@ These may be copied into a new or existing project to make it easier for develop
 
 <!-- A notes section is useful for anything that isn't covered in the Usage or Scope. Like what we have below. -->
 ## Notes
-
-**NOTE: While this boilerplate project uses the Apache 2.0 license, when
-establishing a new repo using this template, please use the
-license that was approved for your project.**
-
-**NOTE: This repository has been configured with the [DCO bot](https://github.com/probot/dco).
-When you set up a new repository that uses the Apache license, you should
-use the DCO to manage contributions. The DCO bot will help enforce that.
-Please contact one of the IBM GH Org stewards.**
 
 <!-- Questions can be useful but optional, this gives you a place to say, "This is how to contact this project maintainers or create PRs -->
 If you have any questions or issues you can create a new [issue here][issues].

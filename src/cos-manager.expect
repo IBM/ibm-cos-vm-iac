@@ -1,0 +1,44 @@
+#!/usr/bin/expect -f
+#
+# Copyright 2021- hseipp. All rights reserved
+# SPDX-License-Identifier: Apache2.0
+#
+set nodename [lindex $argv 0]
+set ip [lindex $argv 1]
+set gw [lindex $argv 2]
+spawn virsh console $nodename
+expect "Escape character is"
+send "\n\n"
+expect "login: " {
+    send "localadmin\n"
+    expect "Password: "
+    send "password\n"
+}   
+expect "# " {
+    send "edit"
+    send "\n"
+    expect "# "
+    send "channel data port eth0 ip $ip netmask 255.255.255.0 gateway $gw"
+    send "\n"
+    expect "# "
+    send "system dns 9.9.9.9"
+    send "\n"
+    expect "# "
+    send "system ntpservers de.pool.ntp.org"
+    send "\n"
+    expect "# "
+    send "system hostname manager"
+    send "\n"
+    expect "# "
+    send "system organization IBM"
+    send "\n"
+    expect "# "
+    send "system country DE"
+    send "\n"
+    expect "# "
+    send "activate"
+    send "\n"
+    expect "# "
+    send "exit"
+    send "\n"
+}
