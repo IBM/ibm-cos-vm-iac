@@ -55,8 +55,8 @@ On a system with 6-core Intel i7, 64GB RAM and NVMe SSD the installation process
 approximately 5 minutes for a 5-node system (manager, accesser, 3 slicestors).
 
 Once the script is completed, point your browser on the host system to
-https://<your manager IP>
-and start configuring the system as described in the [documentation](https://www.ibm.com/support/knowledgecenter/en/STXNRM_3.15.5/coss.doc/managerAdmin_c3a5ccleversafe5cadminmanager5cchapter2_entire.html).
+`https://<your manager IP>` and start configuring the system as described
+in the [documentation](https://www.ibm.com/support/knowledgecenter/en/STXNRM_3.15.5/coss.doc/managerAdmin_c3a5ccleversafe5cadminmanager5cchapter2_entire.html).
 
 <!-- A notes section is useful for anything that isn't covered in the Usage or Scope. Like what we have below. -->
 ## Notes
