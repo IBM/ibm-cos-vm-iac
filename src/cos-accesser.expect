@@ -34,7 +34,7 @@ expect "# " {
     send "system country DE"
     send "\n"
     expect "# "
-    send "manager ip 192.168.122.240"
+    send "manager ip $mgrip"
     send "\n"
     expect "available?"
     send "y"
