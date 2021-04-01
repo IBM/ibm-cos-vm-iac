@@ -12,7 +12,9 @@ can be built on top a KVM-based Linux virtualization host. Please note that this
 of IBM Cloud Object Storage System (IBM COS) deployed as KVM VMs is not supported by IBM and only to be used for
 evaluation or demonstration purposes.
 
-Please note that the VM templates for IBM COS
+Please note that the VM templates for IBM COS are optimized to be as small as possible for a test system with regards to
+(virtual) CPU assignment, RAM consuption and disk space. Depending on what you want to achieve with the test installation,
+you might need to increase the values.
 
 ## Prerequisites
 
