@@ -8,22 +8,56 @@
 ## Scope
 
 The purpose of this project is to demonstrate how a pure virtual variant of the [IBM Cloud Object Storage System](https://www.ibm.com/support/knowledgecenter/en/STXNRM)
-can be built on top a KVM-based Linux virtualization host.
+can be built on top a KVM-based Linux virtualization host. Please note that this project as well as the operation
+of IBM Cloud Object Storage System (IBM COS) deployed as KVM VMs is not supported by IBM and only to be used for
+evaluation or demonstration purposes.
+
+Please note that the VM templates for IBM COS
 
 ## Prerequisites
 
 Before running the main build script from within the [source directory](src/) you need to have a Linux console on a system with
-libvirt/KVM installed (tested on Fedora 33).
+libvirt/KVM installed. Tests were performed on a Fedora 33 system.
 You'll need at least the following packages installed
+* qemu-img, qemu-kvm, libvirt, libvirt-client - for Fedora, please see [Getting started with Virtualization](https://docs.fedoraproject.org/en-US/quick-docs/getting-started-with-virtualization/)
 * bash
+* tar
+* openssh
 * expect
-* (more to be added)
+
+You need to download the IBM COS OVA files from [FixCentral](https://www.ibm.com/support/fixcentral/).
+There might be authorization required, contact your IBM representative for help with that.
+Place the ova files into the [OVA directory](ova/).
+While testing this project, the following files were used:
+```
+clevos-3.15.5.55-accesser.ova
+clevos-3.15.5.55-accesser.ova.md5
+clevos-3.15.5.55-manager.ova
+clevos-3.15.5.55-manager.ova.md5
+clevos-3.15.5.55-slicestor.ova
+clevos-3.15.5.55-slicestor.ova.md5
+```
 
 <!-- A more detailed Usage or detailed explaination of the repository here -->
 ## Usage
 
-**TBD**
-Change to the src directory and run `./build.sh`
+Review the [configuration file](./config.sh) to adjust the settings if required.
+Please note that the `BASE_IP` parameter assumes to be the partial starting address of a
+sequential address range for the devices. So if you enter a.b.c.d here the script will use
+a.b.c.d0 for the manager, a.b.c.d1 for the accesser and a.b.c.d2, a.b.c.d3, a.b.c.d4 for
+the 3 (default) slicestors. Please note that so far only 3 or 6 slicestors were tested.
+
+To build the IBM COS system, open a terminal window, `cd` to the `src/` directory and run `./build.sh`
+
+On a system with 6-core Intel i7, 64GB RAM and NVMe SSD the installation process will take
+approximately 5 minutes for a 5-node system (manager, accesser, 3 slicestors).
+
+Once the script is completed, point your browser on the host system to
+https://<your manager IP>
+and start configuring the system as described in the [documentation](https://www.ibm.com/support/knowledgecenter/en/STXNRM_3.15.5/coss.doc/managerAdmin_c3a5ccleversafe5cadminmanager5cchapter2_entire.html).
+
+<!-- A notes section is useful for anything that isn't covered in the Usage or Scope. Like what we have below. -->
+## Notes
 
 This repository contains some example best practices for open source repositories:
 
@@ -42,8 +76,6 @@ This repository contains some example best practices for open source repositorie
 
 These may be copied into a new or existing project to make it easier for developers not on a project team to collaborate.
 
-<!-- A notes section is useful for anything that isn't covered in the Usage or Scope. Like what we have below. -->
-## Notes
 
 <!-- Questions can be useful but optional, this gives you a place to say, "This is how to contact this project maintainers or create PRs -->
 If you have any questions or issues you can create a new [issue here][issues].
