@@ -61,10 +61,10 @@ and start configuring the system as described in the [documentation](https://www
 <!-- A notes section is useful for anything that isn't covered in the Usage or Scope. Like what we have below. -->
 ## Notes
 
-This repository contains some example best practices for open source repositories:
+You can find information about the project license, how to contribute, who is maintaining the project
+and a list of changes at the following locations:
 
 * [LICENSE](LICENSE)
-* [README.md](README.md)
 * [CONTRIBUTING.md](CONTRIBUTING.md)
 * [MAINTAINERS.md](MAINTAINERS.md)
 <!-- A Changelog allows you to track major changes and things that happen, https://github.com/github-changelog-generator/github-changelog-generator can help automate the process -->
@@ -73,10 +73,10 @@ This repository contains some example best practices for open source repositorie
 > These are optional
 
 <!-- The following are OPTIONAL, but strongly suggested to have in your repository. -->
-* [dco.yml](.github/dco.yml) - This enables DCO bot for you, please take a look https://github.com/probot/dco for more details.
+<!--* [dco.yml](.github/dco.yml) - This enables DCO bot for you, please take a look https://github.com/probot/dco for more details.
 * [travis.yml](.travis.yml) - This is a example `.travis.yml`, please take a look https://docs.travis-ci.com/user/tutorial/ for more details.
 
-These may be copied into a new or existing project to make it easier for developers not on a project team to collaborate.
+These may be copied into a new or existing project to make it easier for developers not on a project team to collaborate.-->
 
 
 <!-- Questions can be useful but optional, this gives you a place to say, "This is how to contact this project maintainers or create PRs -->
@@ -112,4 +112,4 @@ GitHub list of contributors.
 
 - Author: New OpenSource IBMer <new-opensource-ibmer@ibm.com>
 
-[issues]: https://github.com/IBM/repo-template/issues/new
+[issues]: https://github.com/hseipp/ibm-cos-vm-iac/issues/new
