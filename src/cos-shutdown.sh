@@ -4,4 +4,4 @@
 # SPDX-License-Identifier: Apache2.0
 #
 source ../config.sh
-for i in `seq 0 4`; do ssh localadmin@${BASE_IP}${i} poweroff; done
+for i in `seq 0 $((NUM_SLICESTORS+1))`; do ssh localadmin@${BASE_IP}${i} poweroff; done
