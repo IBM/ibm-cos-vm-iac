@@ -27,6 +27,11 @@ You'll need at least the following packages installed
 * openssh
 * expect
 
+e.g. example command for RHEL 8.4:
+````
+dnf install qemu-img qemu-kvm libvirt libvirt-client bash tar openssh expect
+````
+
 You need to download the IBM COS OVA files from [FixCentral](https://www.ibm.com/support/fixcentral/).
 There might be authorization required, contact your IBM representative for help with that.
 Place the ova files into the [OVA directory](ova/).
