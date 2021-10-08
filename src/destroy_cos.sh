@@ -7,8 +7,8 @@ source ../config.sh
 sudo virsh destroy COS${SYSTEM}-Manager1
 sudo virsh undefine COS${SYSTEM}-Manager1
 sudo virsh vol-delete cos${SYSTEM}manager1.qcow2 --pool default
-sudo virsh destroy COS${SYSTEM}-Accesser
-sudo virsh undefine COS${SYSTEM}-Accesser
+sudo virsh destroy COS${SYSTEM}-Accesser1
+sudo virsh undefine COS${SYSTEM}-Accesser1
 sudo virsh vol-delete cos${SYSTEM}accesser1.qcow2 --pool default
 for i in `seq 1 ${NUM_SLICESTORS}`
 do
