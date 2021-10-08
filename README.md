@@ -22,6 +22,7 @@ Before running the main build script from within the [source directory](src/) yo
 libvirt/KVM installed. Tests were performed on a Fedora 33 system.
 You'll need at least the following packages installed
 * qemu-img, qemu-kvm, libvirt, libvirt-client - for Fedora, please see [Getting started with Virtualization](https://docs.fedoraproject.org/en-US/quick-docs/getting-started-with-virtualization/)
+* virt-install
 * bash
 * tar
 * openssh
@@ -29,7 +30,7 @@ You'll need at least the following packages installed
 
 e.g. example command for RHEL 8.4:
 ````
-dnf install qemu-img qemu-kvm libvirt libvirt-client bash tar openssh expect
+dnf install qemu-img qemu-kvm libvirt libvirt-client bash tar openssh expect virt-install
 ````
 
 You need to download the IBM COS OVA files from [FixCentral](https://www.ibm.com/support/fixcentral/).
@@ -37,13 +38,15 @@ There might be authorization required, contact your IBM representative for help 
 Place the ova files into the [OVA directory](ova/).
 While testing this project, the following files were used:
 ```
-clevos-3.15.5.55-accesser.ova
-clevos-3.15.5.55-accesser.ova.md5
-clevos-3.15.5.55-manager.ova
-clevos-3.15.5.55-manager.ova.md5
-clevos-3.15.5.55-slicestor.ova
-clevos-3.15.5.55-slicestor.ova.md5
+clevos-3.15.7.83-accesser.ova
+clevos-3.15.7.83-accesser.ova.md5
+clevos-3.15.7.83-manager.ova
+clevos-3.15.7.83-manager.ova.md5
+clevos-3.15.7.83-slicestor.ova
+clevos-3.15.7.83-slicestor.ova.md5
 ```
+
+Note: Use the MD5 checksums to verify that your downloads are not corrupted, otherwise they are not needed for this project.
 
 <!-- A more detailed Usage or detailed explaination of the repository here -->
 ## Usage
