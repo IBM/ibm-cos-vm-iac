@@ -14,3 +14,9 @@ NUM_SLICESTORS=3
 # Note that this is the start of a range with last digit left out so here we
 # will use 192.168.122.240, 192.168.122.241,...
 BASE_IP=192.168.122.24
+# Directory for the KVM images
+IMG_DIR=/var/lib/libvirt/images
+# DNS Servers
+DNS_IPS=9.9.9.9,1.1.1.1
+# NTP Servers
+NTP_IPS=de.pool.ntp.org,us.pool.ntp.org

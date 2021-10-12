@@ -6,7 +6,8 @@
 set nodename [lindex $argv 0]
 set ip [lindex $argv 1]
 set gw [lindex $argv 2]
-set mgrip  [lindex $argv 3]
+set dns [lindex $argv 3]
+set mgrip  [lindex $argv 4]
 spawn virsh console $nodename
 expect "Escape character is"
 send "\n\n"
@@ -25,7 +26,7 @@ expect "# " {
     send "system hostname accesser1"
     send "\n"
     expect "# "
-    send "system dns 9.9.9.9"
+    send "system dns $dns"
     send "\n"
     expect "# "
     send "system organization IBM"
