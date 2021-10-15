@@ -19,7 +19,7 @@ you might need to increase the values.
 ## Prerequisites
 
 Before running the main build script from within the [source directory](src/) you need to have a Linux console on a system with
-libvirt/KVM installed. Tests were performed on a Fedora 33 system.
+libvirt/KVM installed. Tests were performed on Fedora 33, Fedora 34 and RHEL 8.4.
 You'll need at least the following packages installed
 * qemu-img, qemu-kvm, libvirt, libvirt-client - for Fedora, please see [Getting started with Virtualization](https://docs.fedoraproject.org/en-US/quick-docs/getting-started-with-virtualization/)
 * virt-install
@@ -52,10 +52,10 @@ Note: Use the MD5 checksums to verify that your downloads are not corrupted, oth
 ## Usage
 
 Review the [configuration file](./config.sh) to adjust the settings if required.
-Please note that the `BASE_IP` parameter assumes to be the partial starting address of a
-sequential address range for the devices. So if you enter a.b.c.d here the script will use
-a.b.c.d0 for the manager, a.b.c.d1 for the accesser and a.b.c.d2, a.b.c.d3, a.b.c.d4 for
-the 3 (default) slicestors. Please note that so far only 3 or 6 slicestors were tested.
+The `BASE_IP` parameter is the starting address of a sequential address range for the devices.
+So if you enter 10.0.10.10 here the script will use 10.0.10.10 for the manager, 10.0.10.11 for the accesser
+and 10.0.10.12, 10.0.12.13, 10.0.12.14 for the 3 (default) slicestors. Please note that so far only
+3 or 6 slicestors were tested.
 
 To build the IBM COS system, open a terminal window, `cd` to the `src/` directory and run `./build.sh`
 

@@ -11,9 +11,8 @@ SYSTEM=1
 VERSION=3.15.7.83
 # Number of SliceStors, tested with 3 and 6 so far
 NUM_SLICESTORS=3
-# Note that this is the start of a range with last digit left out so here we
-# will use 192.168.122.240, 192.168.122.241,...
-BASE_IP=192.168.122.24
+# Note that this is the start of a range so 192.168.122.240, 192.168.122.241,... will be used
+BASE_IP=192.168.122.240
 # Directory for the KVM images
 IMG_DIR=/var/lib/libvirt/images
 # DNS Servers
