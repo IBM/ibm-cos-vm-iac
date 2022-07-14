@@ -19,7 +19,7 @@ you might need to increase the values.
 ## Prerequisites
 
 Before running the main build script from within the [source directory](src/) you need to have a Linux console on a system with
-libvirt/KVM installed. Tests were performed on Fedora 33, Fedora 34 and RHEL 8.4.
+libvirt/KVM installed. Tests were performed on Fedora 33-35 and RHEL 8.4.
 You'll need at least the following packages installed
 * qemu-img, qemu-kvm, libvirt, libvirt-client - for Fedora, please see [Getting started with Virtualization](https://docs.fedoraproject.org/en-US/quick-docs/getting-started-with-virtualization/)
 * virt-install
