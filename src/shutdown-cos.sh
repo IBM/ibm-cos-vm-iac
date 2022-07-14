@@ -4,4 +4,6 @@
 # SPDX-License-Identifier: Apache2.0
 #
 source ../config.sh
-for i in `seq 0 $((NUM_SLICESTORS+1))`; do ssh -o "StrictHostKeyChecking no" localadmin@${BASE_IP}${i} poweroff; done
+IP_PREFIX=${BASE_IP%.*}
+IP_SUFFIX=${BASE_IP##*.}
+for i in `seq 0 $((NUM_SLICESTORS+1))`; do ssh -o "StrictHostKeyChecking no" localadmin@${IP_PREFIX}.$(($IP_SUFFIX + $i)) poweroff; done
