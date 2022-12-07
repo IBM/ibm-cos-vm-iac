@@ -19,7 +19,7 @@ you might need to increase the values.
 ## Prerequisites
 
 Before running the main build script from within the [source directory](src/) you need to have a Linux console on a system with
-libvirt/KVM installed. Tests were performed on Fedora 33-35 and RHEL 8.4.
+libvirt/KVM installed. Tests were performed using Fedora 33-36 and RHEL 8.4 as host OS and with COS versions 3.15.7.83, 3.16.6.65 and 3.17.0.63.
 You'll need at least the following packages installed
 * qemu-img, qemu-kvm, libvirt, libvirt-client - for Fedora, please see [Getting started with Virtualization](https://docs.fedoraproject.org/en-US/quick-docs/getting-started-with-virtualization/)
 * virt-install
@@ -38,12 +38,12 @@ There might be authorization required, contact your IBM representative for help 
 Place the ova files into the [OVA directory](ova/).
 While testing this project, the following files were used:
 ```
-clevos-3.15.7.83-accesser.ova
-clevos-3.15.7.83-accesser.ova.md5
-clevos-3.15.7.83-manager.ova
-clevos-3.15.7.83-manager.ova.md5
-clevos-3.15.7.83-slicestor.ova
-clevos-3.15.7.83-slicestor.ova.md5
+clevos-3.17.0.63-accesser.ova
+clevos-3.17.0.63-accesser.ova.md5
+clevos-3.17.0.63-manager.ova
+clevos-3.17.0.63-manager.ova.md5
+clevos-3.17.0.63-slicestor.ova
+clevos-3.17.0.63-slicestor.ova.md5
 ```
 
 Note: Use the MD5 checksums to verify that your downloads are not corrupted, otherwise they are not needed for this project.
