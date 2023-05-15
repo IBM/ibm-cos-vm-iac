@@ -19,7 +19,8 @@ you might need to increase the values.
 ## Prerequisites
 
 Before running the main build script from within the [source directory](src/) you need to have a Linux console on a system with
-libvirt/KVM installed. Tests were performed using Fedora 33-36 and RHEL 8.4 as host OS and with COS versions 3.15.7.83, 3.16.6.65 and 3.17.0.63.
+libvirt/KVM installed. Tests were performed using Fedora 33-37 and RHEL 8.4 as host OS and with COS versions 3.15.7.83, 3.16.6.65, 3.17.0.63
+and 3.17.2.40.
 You'll need at least the following packages installed
 * qemu-img, qemu-kvm, libvirt, libvirt-client - for Fedora, please see [Getting started with Virtualization](https://docs.fedoraproject.org/en-US/quick-docs/getting-started-with-virtualization/)
 * virt-install
@@ -29,21 +30,21 @@ You'll need at least the following packages installed
 * expect
 
 e.g. example command for RHEL 8.4:
-````
+```
 dnf install qemu-img qemu-kvm libvirt libvirt-client bash tar openssh expect virt-install
-````
+```
 
 You need to download the IBM COS OVA files from [FixCentral](https://www.ibm.com/support/fixcentral/).
 There might be authorization required, contact your IBM representative for help with that.
 Place the ova files into the [OVA directory](ova/).
 While testing this project, the following files were used:
 ```
-clevos-3.17.0.63-accesser.ova
-clevos-3.17.0.63-accesser.ova.md5
-clevos-3.17.0.63-manager.ova
-clevos-3.17.0.63-manager.ova.md5
-clevos-3.17.0.63-slicestor.ova
-clevos-3.17.0.63-slicestor.ova.md5
+clevos-3.17.2.40-accesser.ova
+clevos-3.17.2.40-accesser.ova.md5
+clevos-3.17.2.40-manager.ova
+clevos-3.17.2.40-manager.ova.md5
+clevos-3.17.2.40-slicestor.ova
+clevos-3.17.2.40-slicestor.ova.md5
 ```
 
 Note: Use the MD5 checksums to verify that your downloads are not corrupted, otherwise they are not needed for this project.
@@ -64,7 +65,7 @@ approximately 5 minutes for a 5-node system (manager, accesser, 3 slicestors).
 
 Once the script is completed, point your browser on the host system to
 `https://<your manager IP>` and start configuring the system as described
-in the [documentation](https://www.ibm.com/support/knowledgecenter/en/STXNRM_3.15.5/coss.doc/managerAdmin_c3a5ccleversafe5cadminmanager5cchapter2_entire.html).
+in the [documentation](https://www.ibm.com/docs/en/coss/3.17.2?topic=administration-first-time-setup).
 
 <!-- A notes section is useful for anything that isn't covered in the Usage or Scope. Like what we have below. -->
 ## Notes

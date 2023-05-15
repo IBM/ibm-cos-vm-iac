@@ -28,31 +28,31 @@ done
 sudo mv -f ${QCOW2_DIR}/*.qcow2 ${IMG_DIR}/
 # Define virtual machines
 cd ../src
-sudo virt-install --name=COS${SYSTEM}-Manager1 --machine pc --vcpus=2 --ram=4096 --os-variant debian9\
-     --network network=${NETWORK},model=virtio --console pty,target_type=serial\
-     --disk path=${IMG_DIR}/cos${SYSTEM}manager1.qcow2,bus=ide\
-     --graphics vnc,listen=0.0.0.0 --noautoconsole --events on_reboot=restart --boot hd
-sudo virt-install --name=COS${SYSTEM}-Accesser1 --machine pc --vcpus=1 --ram=2048 --os-variant debian9\
-     --network network=${NETWORK},model=virtio --console pty,target_type=serial\
-     --disk path=${IMG_DIR}/cos${SYSTEM}accesser1.qcow2,bus=ide\
-     --graphics vnc,listen=0.0.0.0 --noautoconsole --events on_reboot=restart --boot hd
+sudo virt-install --name=COS${SYSTEM}-Manager1 --machine pc --vcpus=2 --ram=4096 --os-variant debian9 \
+     --network network=${NETWORK},model=virtio --console pty,target_type=serial \
+     --disk path=${IMG_DIR}/cos${SYSTEM}manager1.qcow2,bus=ide \
+     --graphics vnc,listen=0.0.0.0 --noautoconsole --events on_reboot=restart --boot hd --install no_install=yes
+sudo virt-install --name=COS${SYSTEM}-Accesser1 --machine pc --vcpus=1 --ram=2048 --os-variant debian9 \
+     --network network=${NETWORK},model=virtio --console pty,target_type=serial \
+     --disk path=${IMG_DIR}/cos${SYSTEM}accesser1.qcow2,bus=ide \
+     --graphics vnc,listen=0.0.0.0 --noautoconsole --events on_reboot=restart --boot hd --install no_install=yes
 for I in `seq 1 ${NUM_SLICESTORS}`; do
-    sudo virt-install --name=COS${SYSTEM}-Slicestor${I} --machine pc --vcpus=1 --ram=3072 --os-variant debian9\
-	 --network network=${NETWORK},model=virtio --console pty,target_type=serial\
-	 --disk path=${IMG_DIR}/cos${SYSTEM}slicestor${I}.qcow2,bus=ide\
-	 --disk path=${IMG_DIR}/cos${SYSTEM}slicestor${I}disk2.qcow2,bus=sata\
-	 --disk path=${IMG_DIR}/cos${SYSTEM}slicestor${I}disk3.qcow2,bus=sata\
-	 --disk path=${IMG_DIR}/cos${SYSTEM}slicestor${I}disk4.qcow2,bus=sata\
-	 --disk path=${IMG_DIR}/cos${SYSTEM}slicestor${I}disk5.qcow2,bus=sata\
-	 --disk path=${IMG_DIR}/cos${SYSTEM}slicestor${I}disk6.qcow2,bus=sata\
-	 --disk path=${IMG_DIR}/cos${SYSTEM}slicestor${I}disk7.qcow2,bus=sata\
-	 --disk path=${IMG_DIR}/cos${SYSTEM}slicestor${I}disk8.qcow2,bus=sata\
-	 --disk path=${IMG_DIR}/cos${SYSTEM}slicestor${I}disk9.qcow2,bus=sata\
-	 --disk path=${IMG_DIR}/cos${SYSTEM}slicestor${I}disk10.qcow2,bus=sata\
-	 --disk path=${IMG_DIR}/cos${SYSTEM}slicestor${I}disk11.qcow2,bus=sata\
-	 --disk path=${IMG_DIR}/cos${SYSTEM}slicestor${I}disk12.qcow2,bus=sata\
-	 --disk path=${IMG_DIR}/cos${SYSTEM}slicestor${I}disk13.qcow2,bus=sata\
-	 --graphics vnc,listen=0.0.0.0 --noautoconsole --events on_reboot=restart --boot hd
+    sudo virt-install --name=COS${SYSTEM}-Slicestor${I} --machine pc --vcpus=1 --ram=3072 --os-variant debian9 \
+	 --network network=${NETWORK},model=virtio --console pty,target_type=serial \
+	 --disk path=${IMG_DIR}/cos${SYSTEM}slicestor${I}.qcow2,bus=ide \
+	 --disk path=${IMG_DIR}/cos${SYSTEM}slicestor${I}disk2.qcow2,bus=sata \
+	 --disk path=${IMG_DIR}/cos${SYSTEM}slicestor${I}disk3.qcow2,bus=sata \
+	 --disk path=${IMG_DIR}/cos${SYSTEM}slicestor${I}disk4.qcow2,bus=sata \
+	 --disk path=${IMG_DIR}/cos${SYSTEM}slicestor${I}disk5.qcow2,bus=sata \
+	 --disk path=${IMG_DIR}/cos${SYSTEM}slicestor${I}disk6.qcow2,bus=sata \
+	 --disk path=${IMG_DIR}/cos${SYSTEM}slicestor${I}disk7.qcow2,bus=sata \
+	 --disk path=${IMG_DIR}/cos${SYSTEM}slicestor${I}disk8.qcow2,bus=sata \
+	 --disk path=${IMG_DIR}/cos${SYSTEM}slicestor${I}disk9.qcow2,bus=sata \
+	 --disk path=${IMG_DIR}/cos${SYSTEM}slicestor${I}disk10.qcow2,bus=sata \
+	 --disk path=${IMG_DIR}/cos${SYSTEM}slicestor${I}disk11.qcow2,bus=sata \
+	 --disk path=${IMG_DIR}/cos${SYSTEM}slicestor${I}disk12.qcow2,bus=sata \
+	 --disk path=${IMG_DIR}/cos${SYSTEM}slicestor${I}disk13.qcow2,bus=sata \
+	 --graphics vnc,listen=0.0.0.0 --noautoconsole --events on_reboot=restart --boot hd --install no_install=yes
 done
 # Cleanup previous installation
 IP_PREFIX=${BASE_IP%.*}

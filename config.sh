@@ -7,7 +7,7 @@ NETWORK=default
 # When provisioning multiple COS systems at the same time, use this index to identify the system
 SYSTEM=1
 # IBM Cloud Object Storage version
-VERSION=3.17.0.63
+VERSION=3.17.2.40
 # Number of SliceStors, tested with 3 and 6 so far
 NUM_SLICESTORS=3
 # Note that this is the start of a range so 192.168.122.240, 192.168.122.241,... will be used
